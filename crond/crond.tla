@@ -10,7 +10,7 @@ nullp == CHOOSE x: x \notin PROGS
 TypeInv == /\ timers = [n \in Nat -> [t -> now, l -> 0, r -> "no"]]
            /\ IsFiniteSet(aprocs)
            /\ crontab \in [Nat -> [time:Nat,
-                                   prog: PROGS \cap nullp,
+                                   prog: PROGS \cup nullp,
                                    status: {"none", "no", "yes", "run"}]]
            /\ now \in Nat
 Ts == INSTANCE Timers
